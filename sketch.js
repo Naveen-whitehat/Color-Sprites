@@ -1,6 +1,6 @@
-var r1,r2;
-
-
+var r1,r2,r3;
+var a,b;
+var c,d;
 
 
 
@@ -9,7 +9,7 @@ function setup(){
 
 r1 = createSprite(650,400,50,200);
 r2 = createSprite(700,200,200,50);
-
+r3 = createSprite(100,100,50,50);
 
 }
 
@@ -22,7 +22,7 @@ r2.shapeColor = "yellow";
 r1.x = mouseX;
 r1.y = mouseY;
 
-if(r1.x - r2.x < r1.width/2 + r2.width/2 && r2.x - r1.x < r1.width/2 + r2.width/2 && r1.y - r2.y < r1.height/2 + r2.height/2 && r2.y - r1.y < r1.height/2 + r2.height/2){
+if (isTouch(r1,r2)){
 
   r1.shapeColor = "red";
   r2.shapeColor = "red"; 
@@ -33,6 +33,17 @@ if(r1.x - r2.x < r1.width/2 + r2.width/2 && r2.x - r1.x < r1.width/2 + r2.width/
 else{
   r1.shapeColor = "yellow";
 r2.shapeColor = "yellow";
+}
+
+if (isTouch(r1,r3)){
+
+  r1.shapeColor = "red";
+  r3.shapeColor = "red";
+}
+
+else{
+r1.shapeColor = "yellow";
+r3.shapeColor = "yellow";
 }
 
 drawSprites();
